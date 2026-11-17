@@ -3630,6 +3630,11 @@ section.privacy-verder {
     gap: 28px;
   }
 
+  /* Het label boven de kop dichter erop, zodat de telefoon niet verder zakt (17-11-2026). */
+  .opening .label {
+    margin-bottom: 10px;
+  }
+
   .opening h1 {
     font-size: 34px;
     margin-bottom: 12px;
