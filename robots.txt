@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://meetvinn.nl/sitemap.xml
+Sitemap: https://meetnovi.nl/sitemap.xml
