@@ -1,4 +1,4 @@
-// Veegkaarten met bolletjes eronder op de telefoon (31-10-2026): Zo werkt Novi en Huishouden
+// Veegkaarten met bolletjes eronder op de telefoon (31-10-2026): Zo werkt novi en Huishouden
 // op de homepagina, en de vier blokken op de Privacy-pagina. De bolletjes zeggen waar je bent
 // en springen bij een tik naar die kaart. Op de laptop staan de kaarten naast of onder elkaar
 // en zijn de bolletjes verborgen (zie .stippen in style.css).
