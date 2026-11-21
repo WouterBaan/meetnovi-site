@@ -4597,24 +4597,3 @@ section.privacy-verder {
     padding-bottom: 52px;
   }
 }
-
-/* De n van novi als boog, op de hoogte van de hoofdletters, in labels die in hoofdletters
-   staan (21-11-2026). Dikte en kleur volgen het label. De echte letter staat er verborgen
-   naast, zodat schermlezers "novi score" lezen. */
-.boog-n {
-  display: inline-block;
-  width: 0.649em;
-  height: 0.705em;
-  margin-right: 0.07em;
-  vertical-align: baseline;
-  overflow: visible;
-}
-
-.verborgen {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
