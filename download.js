@@ -1,8 +1,8 @@
-// Download Novi, op de pagina Abonnement. Elke Download-knop op de site gaat hierheen, zodat je
+// Download novi, op de pagina Abonnement. Elke Download-knop op de site gaat hierheen, zodat je
 // eerst een abonnement kiest (Wouter, 27-10-2026). De knop in een prijskaart opent dan een
 // venster met de QR-code, of op een iPhone straks rechtstreeks de App Store.
 (() => {
-  // Zodra Novi in de App Store staat: de link hier, en de QR-code in het venster vervangen.
+  // Zodra novi in de App Store staat: de link hier, en de QR-code in het venster vervangen.
   const APPSTORE = '';
 
   // Het inschrijfformulier van Brevo voor de wachtlijst (met dubbele bevestiging per mail).
@@ -20,12 +20,12 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18" /></svg>
         </button>
         <img class="qrlogo" src="favicon-192.png" alt="" />
-        <h2 id="qrtitel">Download Novi</h2>
+        <h2 id="qrtitel">Download novi</h2>
         <p class="qrkeuze" hidden><strong></strong><span></span></p>
-        <p class="met-winkel">Scan de code met de camera van je iPhone. Je gaat dan naar Novi in de App Store.</p>
+        <p class="met-winkel">Scan de code met de camera van je iPhone. Je gaat dan naar novi in de App Store.</p>
         <div class="qrcode met-winkel" aria-label="QR-code naar de App Store"><span>QR-code</span></div>
         <div class="zonder-winkel">
-          <p>Novi komt binnenkort in de App Store. Laat je e-mailadres achter, dan laten we het je weten.</p>
+          <p>novi komt binnenkort in de App Store. Laat je e-mailadres achter, dan laten we het je weten.</p>
           <form class="wachtlijst" novalidate>
             <label class="onzichtbaar" for="wachtlijst-mail">E-mailadres</label>
             <input id="wachtlijst-mail" type="email" name="EMAIL" autocomplete="email" placeholder="je@email.nl" required />
@@ -46,7 +46,7 @@
   if (!WACHTLIJST) {
     venster.querySelectorAll('.wachtlijst, .wachtlijst-uitleg, .wachtlijst-klaar').forEach((el) => el.remove());
     const zin = venster.querySelector('.zonder-winkel p');
-    if (zin) zin.textContent = 'Novi komt binnenkort in de App Store.';
+    if (zin) zin.textContent = 'novi komt binnenkort in de App Store.';
   }
 
   const formulier = venster.querySelector('.wachtlijst');
@@ -90,7 +90,7 @@
     const product = kaart.closest('.prijs-kaarten').dataset.product;
     const periode = kaart.dataset.periode;
     vak.querySelector('strong').textContent =
-      (product === 'huishouden' ? 'Novi Huishouden' : 'Novi') + ', ' + periode;
+      (product === 'huishouden' ? 'novi Huishouden' : 'novi') + ', ' + periode;
     vak.querySelector('span').textContent = kaart.dataset[product] + ', de eerste maand gratis';
     vak.hidden = false;
   };
