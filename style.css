@@ -595,6 +595,336 @@ h1 {
   font-weight: 700;
 }
 
+/* ---------- Tabbladen van de telefoon (23-11-2026) ---------- */
+
+/* Vegen tussen Home, Inzichten, Score, Sparen en Budgetten: met de vinger, met twee vingers
+   op het trackpad, of slepen met de muis (veeg.js). Klok, eiland, gloed en tabbalk blijven
+   staan, zoals in de app; alleen de tabbladen schuiven. Eén veeg is één tabblad. */
+.bladen {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 820px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.bladen::-webkit-scrollbar {
+  display: none;
+}
+
+.bladen.slepen {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
+.blad {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.tab {
+  cursor: pointer;
+}
+
+.b-kop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 4px;
+}
+
+.b-kop h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+}
+
+.b-kop .vul {
+  flex: 1;
+}
+
+.b-info {
+  display: grid;
+  place-items: center;
+}
+
+.b-weken {
+  display: flex;
+  gap: 5px;
+}
+
+.b-weken i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2c2c2c;
+}
+
+.b-weken i.was {
+  background: #fff;
+}
+
+.b-weken i.nu,
+.b-lees i,
+.b-grafiek .knipper {
+  animation: knipper 1.6s ease-in-out infinite alternate;
+}
+
+.b-weken i.nu {
+  background: #5b92ff;
+}
+
+.b-sub {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+  padding: 0 4px;
+  font-size: 14px;
+}
+
+.b-sub span + span {
+  color: #919191;
+}
+
+.b-zin {
+  margin: 14px 4px 16px;
+  font-size: 15.5px;
+  line-height: 22px;
+}
+
+.b-lees {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.b-lees i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.b-grafiek {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 6px;
+}
+
+.b-grafiek text {
+  fill: #919191;
+  font-size: 11px;
+  font-family: inherit;
+}
+
+.b-grafiek text[fill] {
+  fill: #fff;
+}
+
+.b-rijen {
+  margin-top: 14px;
+}
+
+.b-rij {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 4px;
+}
+
+.b-rij + .b-rij {
+  border-top: 0.5px solid #353535;
+}
+
+.b-rij .naam {
+  flex: 1;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.b-rij .naam small {
+  display: block;
+  color: #919191;
+  font-size: 11.5px;
+  font-weight: 400;
+}
+
+.b-meter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 112px;
+}
+
+.b-meter b {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.b-meter span {
+  align-self: stretch;
+  height: 5px;
+  margin-top: 5px;
+  border-radius: 2.5px;
+  background: #2c2c2c;
+  overflow: hidden;
+}
+
+.b-meter em {
+  display: block;
+  height: 100%;
+  border-radius: 2.5px;
+}
+
+.blokkop.b-ruim {
+  margin-top: 28px;
+}
+
+.appkaart.b-lijst .b-rij {
+  padding: 11px 14px;
+}
+
+.b-ring {
+  position: relative;
+  width: 74px;
+  height: 74px;
+}
+
+.b-ring svg {
+  display: block;
+}
+
+.b-ring span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.b-delen {
+  margin-top: 14px;
+}
+
+.b-deel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 4px;
+  font-size: 14px;
+}
+
+.b-deel + .b-deel {
+  border-top: 0.5px solid #353535;
+}
+
+.b-deel i {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.b-deel .naam {
+  flex: 1;
+  font-weight: 600;
+}
+
+.b-deel b {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.b-deel.ander {
+  color: #919191;
+  font-style: italic;
+}
+
+.b-deel.ander .naam,
+.b-deel.ander b {
+  font-weight: 400;
+}
+
+.b-knop {
+  display: block;
+  width: max-content;
+  margin: 18px auto 0;
+  padding: 8px 16px;
+  border: 1px solid #5b92ff;
+  border-radius: 999px;
+  color: #5b92ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.b-sectie {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 4px 10px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.b-sectie i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.b-kaart {
+  padding: 0 14px;
+  border: 0.5px solid #353535;
+  border-radius: 18px;
+  background: #1c1c1c;
+}
+
+.b-post {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.b-post + .b-post {
+  border-top: 0.5px solid #353535;
+}
+
+.b-post b {
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .b-weken i.nu,
+  .b-lees i,
+  .b-grafiek .knipper {
+    animation: none;
+  }
+}
+
 /* ---------- Venster met de QR-code ---------- */
 
 .qrvenster {
