@@ -30,6 +30,71 @@
     zet();
   }
 
+  // De telefoon bovenaan de homepagina (23-11-2026, Wouter): veeg van Home naar Inzichten,
+  // Score, Sparen en Budgetten. Met de vinger en het trackpad doet de browser het zelf
+  // (scroll-snap in style.css); met de muis sleep je, en dan springt hij na het loslaten naar
+  // het volgende of vorige tabblad. Een tik op een tab gaat er meteen heen. De tab van het
+  // tabblad dat in beeld is, licht op.
+  function tabbladen(bladen) {
+    if (!bladen) return;
+    var aantal = bladen.querySelectorAll('.blad').length;
+    var tabs = Array.prototype.slice.call(
+      bladen.parentNode.querySelectorAll('.tabbalk .tab')
+    );
+    function binnen(i) {
+      return Math.min(aantal - 1, Math.max(0, i));
+    }
+    function hier() {
+      return binnen(Math.round(bladen.scrollLeft / bladen.clientWidth));
+    }
+    function naar(i) {
+      bladen.scrollTo({ left: binnen(i) * bladen.clientWidth, behavior: 'smooth' });
+    }
+    function zet() {
+      var i = hier();
+      tabs.forEach(function (tab, j) {
+        tab.classList.toggle('aan', j === i);
+      });
+    }
+    bladen.addEventListener('scroll', function () { requestAnimationFrame(zet); }, { passive: true });
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { naar(i); });
+    });
+
+    var sleep = null;
+    bladen.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      e.preventDefault();
+      // De telefoon is verkleind (zoom in style.css): een muisbeweging is in het scherm
+      // groter, anders loopt het tabblad achter de muis aan.
+      var breed = bladen.getBoundingClientRect().width;
+      sleep = {
+        x: e.clientX,
+        links: bladen.scrollLeft,
+        van: hier(),
+        schaal: breed > 0 ? bladen.clientWidth / breed : 1,
+      };
+      bladen.classList.add('slepen');
+      bladen.setPointerCapture(e.pointerId);
+    });
+    bladen.addEventListener('pointermove', function (e) {
+      if (!sleep) return;
+      bladen.scrollLeft = sleep.links - (e.clientX - sleep.x) * sleep.schaal;
+    });
+    function los(e) {
+      if (!sleep) return;
+      var verschoven = e.clientX - sleep.x;
+      var doel = sleep.van + (verschoven < -30 ? 1 : verschoven > 30 ? -1 : 0);
+      sleep = null;
+      bladen.classList.remove('slepen');
+      naar(doel);
+    }
+    bladen.addEventListener('pointerup', los);
+    bladen.addEventListener('pointercancel', los);
+    zet();
+  }
+
+  tabbladen(document.querySelector('.telefoon .bladen'));
   veegkaarten(document.querySelector('#hoe .stappen'), '.stap', 'Stap');
   veegkaarten(document.querySelector('#samen .samen-raster'), '.zij', 'Kaart');
   veegkaarten(document.querySelector('.privacy-punten .blokken'), '.blok', 'Kaart');
