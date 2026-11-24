@@ -400,7 +400,7 @@ h1 {
 }
 
 .app {
-  padding: 12px 16px 0;
+  padding: 18px 16px 0;
 }
 
 .groet {
@@ -436,7 +436,7 @@ h1 {
 }
 
 .groet-sub {
-  margin: 6px 4px 14px;
+  margin: 6px 4px 22px;
   font-size: 15.5px;
   line-height: 22px;
 }
@@ -444,7 +444,7 @@ h1 {
 .ringen {
   display: flex;
   gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 22px;
 }
 
 .ringvak {
@@ -466,7 +466,7 @@ h1 {
   position: relative;
   width: 112px;
   height: 112px;
-  margin: 8px 0;
+  margin: 12px 0;
 }
 
 .ring span {
@@ -522,7 +522,7 @@ h1 {
   background: #1c1c1c;
   border: 0.5px solid #353535;
   border-radius: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 /* Het vinkje direct achter de zin, zoals ReviewBlock in de app (24-11-2026). */
@@ -537,19 +537,19 @@ h1 {
 /* De rekeningen zoals op Home in de app: de lijnen ertussen springen in, en onderaan het
    totaal met het aantal rekeningen (24-11-2026). */
 .appkaart.rekeningen {
-  padding: 4px 16px 12px;
+  padding: 6px 16px 14px;
 }
 
 .appkaart.rekeningen .rekening {
-  padding: 9px 0;
+  padding: 11px 0;
 }
 
 .totaal {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2px;
-  padding-top: 10px;
+  margin-top: 4px;
+  padding-top: 12px;
   border-top: 0.5px solid #353535;
 }
 
@@ -632,14 +632,17 @@ h1 {
   letter-spacing: -0.2px;
 }
 
+/* Zoals TabBar in de app (24-11-2026): 62 hoog, 36 van de zijkant (TAB_BAR_MARGE) en 28
+   van de onderkant (de thuisbalk min 6). Hij zweeft over de inhoud, dus wat onderaan staat,
+   valt er net als in de app half of helemaal achter. */
 .tabbalk {
   position: absolute;
   z-index: 2;
-  left: 14px;
-  right: 14px;
-  bottom: 26px;
-  height: 66px;
-  border-radius: 33px;
+  left: 36px;
+  right: 36px;
+  bottom: 28px;
+  height: 62px;
+  border-radius: 24px;
   background: #2e2e2e;
   border: 0.5px solid #4a4a4a;
   display: flex;
