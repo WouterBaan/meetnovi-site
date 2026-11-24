@@ -30,41 +30,37 @@
     zet();
   }
 
-  // De telefoon bovenaan de homepagina (23-11-2026, Wouter): veeg van Home naar Inzichten,
-  // Score, Sparen en Budgetten. Met de vinger en het trackpad doet de browser het zelf
-  // (scroll-snap in style.css); met de muis sleep je, en dan springt hij na het loslaten naar
-  // het volgende of vorige tabblad. Een tik op een tab gaat er meteen heen. De tab van het
-  // tabblad dat in beeld is, licht op.
+  // De telefoon bovenaan de homepagina (23-11-2026, Wouter): van Home naar Inzichten, Score,
+  // Sparen en Budgetten. Sinds 24-11-2026 schuift er niets meer (Wouter: in Novi schiet het
+  // gewoon naar het nieuwe tabblad). Er staat één tabblad in beeld. Een veeg met de vinger,
+  // met twee vingers op het trackpad of slepen met de muis springt naar het volgende of
+  // vorige; een tik op een tab of een bolletje gaat er meteen heen. De tab en het bolletje
+  // van het tabblad dat in beeld is, lichten op.
   function tabbladen(bladen) {
     if (!bladen) return;
-    var aantal = bladen.querySelectorAll('.blad').length;
+    var bladenLijst = Array.prototype.slice.call(bladen.querySelectorAll('.blad'));
+    var aantal = bladenLijst.length;
     var tabs = Array.prototype.slice.call(
       bladen.parentNode.querySelectorAll('.tabbalk .tab')
     );
-    function binnen(i) {
-      return Math.min(aantal - 1, Math.max(0, i));
-    }
-    function hier() {
-      return binnen(Math.round(bladen.scrollLeft / bladen.clientWidth));
-    }
+    var stippen = [];
+    var nu = 0;
     function naar(i) {
-      bladen.scrollTo({ left: binnen(i) * bladen.clientWidth, behavior: 'smooth' });
-    }
-    function zet() {
-      var i = hier();
+      nu = Math.min(aantal - 1, Math.max(0, i));
+      bladenLijst.forEach(function (blad, j) {
+        blad.hidden = j !== nu;
+      });
       tabs.forEach(function (tab, j) {
-        tab.classList.toggle('aan', j === i);
+        tab.classList.toggle('aan', j === nu);
       });
       stippen.forEach(function (stip, j) {
-        stip.classList.toggle('aan', j === i);
+        stip.classList.toggle('aan', j === nu);
       });
     }
-    bladen.addEventListener('scroll', function () { requestAnimationFrame(zet); }, { passive: true });
     tabs.forEach(function (tab, i) {
       tab.addEventListener('click', function () { naar(i); });
     });
     // De bolletjes onder de telefoon (24-11-2026): één per tabblad, en een klik gaat erheen.
-    var stippen = [];
     var plek = document.querySelector('.veegwijzer .schermstippen');
     if (plek) {
       for (var k = 0; k < aantal; k++) {
@@ -75,37 +71,56 @@
       }
     }
 
-    var sleep = null;
+    // Vinger en muis: meer dan 30 px opzij, en meer opzij dan omhoog. Omhoog en omlaag blijft
+    // gewoon de pagina scrollen (touch-action: pan-y in style.css); dan breekt de browser
+    // het gebaar af en gebeurt hier niets.
+    var begin = null;
     bladen.addEventListener('pointerdown', function (e) {
-      if (e.pointerType !== 'mouse' || e.button !== 0) return;
-      e.preventDefault();
-      // De telefoon is verkleind (zoom in style.css): een muisbeweging is in het scherm
-      // groter, anders loopt het tabblad achter de muis aan.
-      var breed = bladen.getBoundingClientRect().width;
-      sleep = {
-        x: e.clientX,
-        links: bladen.scrollLeft,
-        van: hier(),
-        schaal: breed > 0 ? bladen.clientWidth / breed : 1,
-      };
-      bladen.classList.add('slepen');
-      bladen.setPointerCapture(e.pointerId);
+      if (e.pointerType === 'mouse') {
+        if (e.button !== 0) return;
+        e.preventDefault();
+        bladen.setPointerCapture(e.pointerId);
+      }
+      begin = { x: e.clientX, y: e.clientY };
     });
-    bladen.addEventListener('pointermove', function (e) {
-      if (!sleep) return;
-      bladen.scrollLeft = sleep.links - (e.clientX - sleep.x) * sleep.schaal;
+    bladen.addEventListener('pointerup', function (e) {
+      if (!begin) return;
+      var opzij = e.clientX - begin.x;
+      var omhoog = e.clientY - begin.y;
+      begin = null;
+      if (Math.abs(opzij) > 30 && Math.abs(opzij) > Math.abs(omhoog)) naar(nu + (opzij < 0 ? 1 : -1));
     });
-    function los(e) {
-      if (!sleep) return;
-      var verschoven = e.clientX - sleep.x;
-      var doel = sleep.van + (verschoven < -30 ? 1 : verschoven > 30 ? -1 : 0);
-      sleep = null;
-      bladen.classList.remove('slepen');
-      naar(doel);
-    }
-    bladen.addEventListener('pointerup', los);
-    bladen.addEventListener('pointercancel', los);
-    zet();
+    bladen.addEventListener('pointercancel', function () {
+      begin = null;
+    });
+
+    // Het trackpad: één veeg opzij is één sprong. Na een sprong lopen er nog een tel
+    // gebeurtenissen na (de uitloop van macOS); die tellen niet, tot het even stil is.
+    var opgeteld = 0;
+    var laatste = 0;
+    var rustTot = 0;
+    bladen.addEventListener(
+      'wheel',
+      function (e) {
+        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+        e.preventDefault();
+        var tijd = performance.now();
+        if (tijd - laatste > 250) opgeteld = 0;
+        laatste = tijd;
+        if (tijd < rustTot) {
+          rustTot = tijd + 250;
+          return;
+        }
+        opgeteld += e.deltaX;
+        if (Math.abs(opgeteld) > 40) {
+          naar(nu + (opgeteld > 0 ? 1 : -1));
+          opgeteld = 0;
+          rustTot = tijd + 250;
+        }
+      },
+      { passive: false }
+    );
+    naar(0);
   }
 
   tabbladen(document.querySelector('.telefoon .bladen'));
