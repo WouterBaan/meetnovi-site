@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" href="icon.png?v=20261121" />
     <!-- Vóór de opmaak, zodat de kopbalk op de telefoon meteen goed staat (31-10-2026). -->
     <script>document.documentElement.classList.add('js');</script>
-    <link rel="stylesheet" href="style.css?v=20261124h" />
+    <link rel="stylesheet" href="style.css?v=20261124i" />
   </head>
   <body>
     <header class="kop">
@@ -166,12 +166,12 @@
                   <svg class="b-grafiek" viewBox="0 0 370 176">
                     <path d="M60 103.3H362M60 56.7H362M60 10H362" stroke="#353535" stroke-dasharray="3 4"/>
                     <text x="0" y="107">€1.000</text><text x="0" y="60.5">€2.000</text><text x="0" y="14">€3.000</text>
-                    <path d="M60 48.3 L210 42.2 L360 64.8 V150 H60 Z" fill="#5B92FF14"/>
-                    <path d="M60 35.2H362" stroke="#919191" stroke-opacity=".55"/>
-                    <defs><linearGradient id="b-been" gradientUnits="userSpaceOnUse" x1="210" y1="42.2" x2="356" y2="64.2"><stop offset=".2" stop-color="#fff"/><stop offset=".8" stop-color="#2ECC71"/></linearGradient></defs>
-                    <path d="M60 48.3 L210 42.2" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
-                    <path d="M210 42.2 L356 64.2" fill="none" stroke="url(#b-been)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4"/>
-                    <circle cx="60" cy="48.3" r="2.5" fill="#0a0e14" stroke="#2ECC71" stroke-width="1.5" opacity=".7"/><circle cx="210" cy="42.2" r="2.5" fill="#0a0e14" stroke="#2ECC71" stroke-width="1.5" opacity=".7"/>
+                    <path d="M60 48.3 L210 29.1 L360 64.8 V150 H60 Z" fill="#5B92FF14"/>
+                    <path d="M60 28.7 L210 35.2 L360 35.2" fill="none" stroke="#919191" stroke-opacity=".55" stroke-linejoin="round" stroke-linecap="round"/>
+                    <defs><linearGradient id="b-been" gradientUnits="userSpaceOnUse" x1="210" y1="29.1" x2="356.1" y2="63.9"><stop offset=".2" stop-color="#fff"/><stop offset=".8" stop-color="#2ECC71"/></linearGradient></defs>
+                    <path d="M60 48.3 L210 29.1" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                    <path d="M210 29.1 L356.1 63.9" fill="none" stroke="url(#b-been)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4"/>
+                    <circle cx="60" cy="48.3" r="2.5" fill="#0a0e14" stroke="#2ECC71" stroke-width="1.5" opacity=".7"/><circle cx="210" cy="29.1" r="2.5" fill="#0a0e14" stroke="#FF6369" stroke-width="1.5" opacity=".7"/>
                     <circle class="knipper" cx="360" cy="64.8" r="3" fill="#2ECC71"/>
                     <text x="60" y="170" text-anchor="middle">sep</text><text x="210" y="170" text-anchor="middle">okt</text><text x="356" y="170" text-anchor="middle" fill="#fff">nov</text>
                   </svg>
@@ -310,6 +310,10 @@
                   </div>
                 </div>
                 </div>
+
+                <!-- Wat onder de tabbalk doorloopt, vervaagt naar de achtergrond, zoals BottomFade
+                     in de app (24-11-2026). -->
+                <div class="vervaging" aria-hidden="true"></div>
 
                 <div class="tabbalk">
                   <span class="tab aan">
@@ -803,7 +807,7 @@
         if (!location.hash) document.documentElement.scrollIntoView({ block: 'start', behavior: 'instant' });
       });
     </script>
-    <script src="veeg.js?v=20261124h"></script>
+    <script src="veeg.js?v=20261124i"></script>
     <script src="menu.js?v=20261031o"></script>
     <script src="cookies.js"></script>
     <!-- Bezoekers tellen zonder cookies en zonder IP-adressen (GoatCounter, 28-10-2026). -->
