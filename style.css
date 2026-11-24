@@ -544,7 +544,7 @@ h1 {
   padding: 11px 0;
 }
 
-.totaal {
+.appkaart.rekeningen .totaal {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -553,14 +553,14 @@ h1 {
   border-top: 0.5px solid #353535;
 }
 
-.totaal span {
+.appkaart.rekeningen .totaal span {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.3px;
   text-transform: uppercase;
 }
 
-.totaal small {
+.appkaart.rekeningen .totaal small {
   display: block;
   margin-top: 1px;
   color: #919191;
@@ -570,7 +570,7 @@ h1 {
   text-transform: none;
 }
 
-.totaal b {
+.appkaart.rekeningen .totaal b {
   font-size: 13px;
   letter-spacing: -0.2px;
 }
@@ -1115,6 +1115,140 @@ h1 {
 .b-delen {
   margin-top: 18px;
   padding: 0 4px;
+}
+
+/* Geen lijn tussen Gereserveerd door en het totaal, zoals in de app (24-11-2026). */
+.b-deel.ander + .b-deel.totaal {
+  border-top: 0;
+}
+
+/* De mutaties van de maand, ingeklapt zoals op Sparen in de app: links de stand aan het
+   begin en nu met een pijl ertussen, rechts wat erbij en eraf ging (24-11-2026). */
+.b-sectie.b-mutkop {
+  margin-top: 22px;
+}
+
+.b-flow {
+  display: flex;
+  gap: 8px;
+  padding: 2px 4px 0;
+}
+
+.b-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 72px;
+}
+
+.b-rail b {
+  font-size: 15px;
+  letter-spacing: -0.2px;
+}
+
+.b-rail .lijn {
+  flex: 1;
+  width: 2px;
+  min-height: 30px;
+  border-radius: 1px;
+  background: #353535;
+}
+
+.b-rail svg {
+  margin-top: -10px;
+}
+
+.b-moves {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.b-move {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 33px;
+  padding: 9px 11px;
+  border-radius: 12px;
+}
+
+.b-move b {
+  min-width: 58px;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+
+.b-move span {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.b-move.plus {
+  background: #2ecc711f;
+}
+
+.b-move.plus b {
+  color: #2ecc71;
+}
+
+.b-move.min {
+  background: #ff63691f;
+}
+
+.b-move.min b {
+  color: #ff6369;
+}
+
+.b-unfold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 0;
+  color: #919191;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* De keuze 3 mnd / Totaal links boven een grafiek, het cijfer rechts, zoals PeriodeKnop
+   in de app (24-11-2026). */
+.b-grafiekkop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 42px;
+  padding: 0 4px;
+}
+
+.b-grafiekkop .b-lees {
+  padding: 0;
+}
+
+.b-periode {
+  display: flex;
+  padding: 2px;
+  border-radius: 999px;
+  background: #262626;
+}
+
+.b-periode span {
+  min-width: 34px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  color: #919191;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.b-periode span.aan {
+  background: #1c1c1c;
+  color: #fff;
 }
 
 .b-deel {
