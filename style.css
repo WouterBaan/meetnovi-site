@@ -635,6 +635,70 @@ h1 {
   cursor: pointer;
 }
 
+/* Onder de telefoon: dat je kunt vegen, en waar je bent (24-11-2026). Dezelfde bolletjes als
+   onder de veegkaarten; op een scherm met muis zegt de tekst slepen en klikken. */
+.toneel {
+  flex-direction: column;
+  align-items: center;
+}
+
+.veegwijzer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: var(--zacht);
+  font-size: 14px;
+  text-align: center;
+}
+
+.veegwijzer p {
+  margin: 0;
+}
+
+.schermstippen {
+  display: flex;
+  gap: 8px;
+}
+
+.schermstippen span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rand);
+  cursor: pointer;
+  transition: background 0.2s ease, width 0.2s ease;
+}
+
+.schermstippen span.aan {
+  width: 22px;
+  border-radius: 4px;
+  background: var(--groen);
+}
+
+.veegwijzer .met-muis {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .veegwijzer .met-vinger {
+    display: none;
+  }
+
+  .veegwijzer .met-muis {
+    display: inline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .schermstippen span {
+    transition: none;
+  }
+}
+
 .b-kop {
   display: flex;
   align-items: center;
@@ -3969,6 +4033,12 @@ section.privacy-verder {
   /* Wat lucht tussen de tekst en de telefoon (Wouter, 31-10-2026: 12 was te krap). */
   .opening .binnen {
     gap: 28px;
+  }
+
+  /* De aanwijzing om te vegen boven de telefoon: eronder valt hij buiten beeld (24-11-2026). */
+  .veegwijzer {
+    order: -1;
+    margin: 0 0 14px;
   }
 
   /* Het label boven de kop dichter erop, zodat de telefoon niet verder zakt (17-11-2026). */
