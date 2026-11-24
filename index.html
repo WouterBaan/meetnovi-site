@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" href="icon.png?v=20261121" />
     <!-- Vóór de opmaak, zodat de kopbalk op de telefoon meteen goed staat (31-10-2026). -->
     <script>document.documentElement.classList.add('js');</script>
-    <link rel="stylesheet" href="style.css?v=20261123a" />
+    <link rel="stylesheet" href="style.css?v=20261124a" />
   </head>
   <body>
     <header class="kop">
@@ -321,6 +321,15 @@
                   </span>
                 </div>
               </div>
+            </div>
+            <!-- Dat je kunt vegen, met een bolletje per scherm (24-11-2026). Tekst en bolletjes
+                 zijn sier: de telefoon zelf is een afbeelding met een beschrijving. -->
+            <div class="veegwijzer" aria-hidden="true">
+              <div class="schermstippen"></div>
+              <p>
+                <span class="met-vinger">Veeg voor Inzichten, Score, Sparen en Budgetten</span>
+                <span class="met-muis">Sleep of klik op een tab voor Inzichten, Score, Sparen en Budgetten</span>
+              </p>
             </div>
           </div>
         </div>
@@ -781,7 +790,7 @@
         if (!location.hash) document.documentElement.scrollIntoView({ block: 'start', behavior: 'instant' });
       });
     </script>
-    <script src="veeg.js?v=20261123a"></script>
+    <script src="veeg.js?v=20261124a"></script>
     <script src="menu.js?v=20261031o"></script>
     <script src="cookies.js"></script>
     <!-- Bezoekers tellen zonder cookies en zonder IP-adressen (GoatCounter, 28-10-2026). -->
