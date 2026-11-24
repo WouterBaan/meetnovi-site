@@ -552,11 +552,27 @@ h1 {
   font-weight: 600;
 }
 
+/* Eén poppetje of twee, zoals AccountRow in de app: Samen in groen met twee poppetjes,
+   Alleen jij in grijs met één (24-11-2026). */
 .rekening .naam small {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
   font-size: 11.5px;
   font-weight: 400;
   color: #919191;
+}
+
+.rekening .naam small .samen {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #2ecc71;
+}
+
+.rekening .naam small svg {
+  flex-shrink: 0;
 }
 
 .rekening b {
