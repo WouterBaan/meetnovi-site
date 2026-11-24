@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" href="icon.png?v=20261121" />
     <!-- Vóór de opmaak, zodat de kopbalk op de telefoon meteen goed staat (31-10-2026). -->
     <script>document.documentElement.classList.add('js');</script>
-    <link rel="stylesheet" href="style.css?v=20261124a" />
+    <link rel="stylesheet" href="style.css?v=20261124b" />
   </head>
   <body>
     <header class="kop">
@@ -138,13 +138,21 @@
                   </div>
                 </div>
 
-                <!-- Inzichten (MonthScreen): de maand, wat je uitgaf, en de drie groepen. -->
+                <!-- Inzichten (MonthScreen, 24-11-2026 gelijkgetrokken met de app): de maand met
+                     de weken ernaast, de lijn van september tot nu en de drie groepen. -->
                 <div class="app blad">
                   <div class="b-kop">
                     <h2>November</h2>
-                    <span class="b-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5M12 7.6v.1"/></svg></span>
+                    <span class="b-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5M12 7.6v.6"/></svg></span>
                     <span class="vul"></span>
-                    <span class="b-weken"><i class="was"></i><i class="was"></i><i class="nu"></i><i></i><i></i></span>
+                    <span class="b-weken">
+                      <i><svg viewBox="0 0 24 24"><path d="M12 1A11 11 0 0 1 12 23" stroke="#2ECC71" stroke-width="1.5"/></svg>43</i>
+                      <i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" stroke="#2ECC71" stroke-width="1.5"/></svg>44</i>
+                      <i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" stroke="#2ECC71" stroke-width="1.5"/></svg>45</i>
+                      <i class="nu"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" stroke="#2ECC71" stroke-width="2"/></svg>46</i>
+                      <i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" stroke="#2C2C2C" stroke-width="1.5"/></svg>47</i>
+                      <i><svg viewBox="0 0 24 24"><path d="M12 1A11 11 0 0 0 12 23" stroke="#2C2C2C" stroke-width="1.5"/></svg>48</i>
+                    </span>
                   </div>
                   <div class="b-sub"><span>24 okt – 23 nov</span><span>Nog 12 dagen</span></div>
                   <p class="b-zin">Je ligt op schema. Je hebt nog €412 vrij te besteden, €34 per dag tot je salaris.</p>
@@ -155,11 +163,11 @@
                     </defs>
                     <path d="M60 103.3H362M60 56.7H362M60 10H362" stroke="#ffffff14"/>
                     <text x="0" y="107">€1.000</text><text x="0" y="60.5">€2.000</text><text x="0" y="14">€3.000</text>
-                    <path d="M60 42.2 L120 37.1 L180 47.8 L240 43.6 L300 49.7 L360 64.8 V150 H60 Z" fill="url(#b-blauw)"/>
-                    <path d="M60 35.2H362" stroke="#ffffff59" stroke-dasharray="4 4"/>
-                    <path d="M60 42.2 L120 37.1 L180 47.8 L240 43.6 L300 49.7 L360 64.8" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                    <path d="M60 48.3 L210 42.2 L360 64.8 V150 H60 Z" fill="url(#b-blauw)"/>
+                    <path d="M60 35.2H362" stroke="#ffffff59" stroke-dasharray="3 4"/>
+                    <path d="M60 48.3 L210 42.2 L360 64.8" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
                     <circle class="knipper" cx="360" cy="64.8" r="4.5" fill="#5B92FF"/>
-                    <text x="60" y="170" text-anchor="middle">jun</text><text x="120" y="170" text-anchor="middle">jul</text><text x="180" y="170" text-anchor="middle">aug</text><text x="240" y="170" text-anchor="middle">sep</text><text x="300" y="170" text-anchor="middle">okt</text><text x="356" y="170" text-anchor="middle" fill="#fff">nov</text>
+                    <text x="60" y="170" text-anchor="middle">sep</text><text x="210" y="170" text-anchor="middle">okt</text><text x="356" y="170" text-anchor="middle" fill="#fff">nov</text>
                   </svg>
                   <div class="b-rijen">
                     <div class="b-rij">
@@ -189,18 +197,20 @@
                   </div>
                 </div>
 
-                <!-- Score (InsightsScreen): het rondje, de lijn en de vier onderdelen. -->
+                <!-- Score (InsightsScreen, 24-11-2026 gelijkgetrokken met de app): het rondje, de
+                     vooruitblik, de lijn en de vier onderdelen met een keuzerondje ervoor. -->
                 <div class="app blad">
                   <div class="b-kop">
                     <h2>Novi score</h2>
-                    <span class="b-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5M12 7.6v.1"/></svg></span>
+                    <span class="b-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5M12 7.6v.6"/></svg></span>
                     <span class="vul"></span>
                     <span class="b-ring">
                       <svg width="74" height="74" viewBox="0 0 74 74"><circle cx="37" cy="37" r="33.75" fill="none" stroke="#2C2C2C" stroke-width="6.5"/><circle cx="37" cy="37" r="33.75" fill="none" stroke="#F5B841" stroke-width="6.5" stroke-dasharray="156.9 400" transform="rotate(-90 37 37)"/><circle cx="37" cy="37" r="33.75" fill="none" stroke="#F5B841" stroke-width="6.5" stroke-linecap="round" stroke-dasharray="0 400" stroke-dashoffset="-156.9" transform="rotate(-90 37 37)"/></svg>
                       <span>74%</span>
                     </span>
                   </div>
-                  <p class="b-zin">Als november zo eindigt, stijgt je Novi score naar 76%.</p>
+                  <p class="b-zin">November gaan jullie naar verwachting afsluiten op 76%. Hierbij zal jullie Novi score stijgen met <b class="b-plus">2%p.</b></p>
+                  <div class="b-lees b-lees-maand"><span><i style="background: #F5B841"></i>nov</span><b>76%</b></div>
                   <svg class="b-grafiek" viewBox="0 0 370 152">
                     <defs>
                       <linearGradient id="b-score" gradientUnits="userSpaceOnUse" x1="20" y1="0" x2="350" y2="0"><stop offset="0" stop-color="#FF6369"/><stop offset=".22" stop-color="#FF6369"/><stop offset=".36" stop-color="#F5B841"/><stop offset="1" stop-color="#F5B841"/></linearGradient>
@@ -210,90 +220,86 @@
                     <circle class="knipper" cx="350" cy="41.2" r="4.5" fill="#F5B841"/>
                     <text x="20" y="146" text-anchor="middle">jun</text><text x="86" y="146" text-anchor="middle">jul</text><text x="152" y="146" text-anchor="middle">aug</text><text x="218" y="146" text-anchor="middle">sep</text><text x="284" y="146" text-anchor="middle">okt</text><text x="350" y="146" text-anchor="middle" fill="#fff">nov</text>
                   </svg>
-                  <div class="b-rijen">
-                    <div class="b-rij">
-                      <span class="naam">Uitgavenpatroon<small>Gezond</small></span>
-                      <span class="b-meter"><b>66%</b><span><em style="width: 66%; background: #F5B841"></em></span></span>
-                    </div>
-                    <div class="b-rij">
-                      <span class="naam">Spaarcijfer<small>Kan beter</small></span>
-                      <span class="b-meter"><b>58%</b><span><em style="width: 58%; background: #F5B841"></em></span></span>
-                    </div>
-                    <div class="b-rij">
-                      <span class="naam">Spaarbudget<small>Gezond</small></span>
-                      <span class="b-meter"><b>71%</b><span><em style="width: 71%; background: #F5B841"></em></span></span>
-                    </div>
-                    <div class="b-rij">
-                      <span class="naam">Schuld<small>Uitstekend</small></span>
-                      <span class="b-meter"><b>100%</b><span><em style="width: 100%; background: #2ECC71"></em></span></span>
-                    </div>
+                  <div class="b-pijlers">
+                    <div class="b-pijler"><i></i><span class="naam">Uitgavenpatroon</span><span class="b-cijfer"><b>66%</b><span><em style="width: 66%; background: #F5B841"></em></span></span></div>
+                    <div class="b-pijler"><i></i><span class="naam">Spaarcijfer</span><span class="b-cijfer"><b>58%</b><span><em style="width: 58%; background: #F5B841"></em></span></span></div>
+                    <div class="b-pijler"><i></i><span class="naam">Spaarbudget</span><span class="b-cijfer"><b>71%</b><span><em style="width: 71%; background: #F5B841"></em></span></span></div>
+                    <div class="b-pijler"><i></i><span class="naam">Schuld</span><span class="b-cijfer"><b>100%</b><span><em style="width: 100%; background: #2ECC71"></em></span></span></div>
                   </div>
-                  <div class="blokkop b-ruim">
+                  <div class="blokkop b-verbeter">
                     Verbeter je uitgavenpatroon
                     <span class="vul"></span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#919191" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg>
                   </div>
-                  <div class="appkaart b-lijst">
-                    <div class="b-rij">
-                      <span class="naam">Boodschappen<small>Kan beter</small></span>
-                      <span class="b-meter"><b>52%</b><span><em style="width: 52%; background: #F5B841"></em></span></span>
-                    </div>
+                  <div class="appkaart b-advies">
+                    <div class="b-advies-rij"><span class="naam">Boodschappen</span><span class="b-cijfer smal"><b>52%</b><span><em style="width: 52%; background: #F5B841"></em></span></span></div>
                   </div>
                 </div>
 
-                <!-- Sparen (SavingsScreen): het vrije spaargeld en waaruit de rekening bestaat. -->
+                <!-- Sparen (SavingsScreen, 24-11-2026 gelijkgetrokken met de app): de
+                     spaarrekening, de lijn van september tot nu, Saldo of Spaarbedrag, en waaruit
+                     het bedrag bestaat. -->
                 <div class="app blad">
                   <div class="b-kop">
-                    <h2>Sparen</h2>
-                    <span class="b-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5M12 7.6v.1"/></svg></span>
+                    <h2>Spaarrekening</h2>
+                    <span class="b-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5M12 7.6v.6"/></svg></span>
                   </div>
                   <p class="b-zin">Je hebt €8.940 op je spaarrekening. Hiervan is €6.215 spaargeld en €2.725 gereserveerd voor andere doeleinden.</p>
-                  <div class="b-lees"><i style="background: #2ECC71"></i>€6.215</div>
-                  <svg class="b-grafiek" viewBox="0 0 370 152">
+                  <div class="b-lees b-lees-maand"><span><i style="background: #2ECC71"></i>nov</span><b>€6.215,00</b></div>
+                  <svg class="b-grafiek" viewBox="0 0 370 176">
                     <defs>
                       <linearGradient id="b-groen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2ECC71" stop-opacity=".32"/><stop offset="1" stop-color="#2ECC71" stop-opacity="0"/></linearGradient>
                     </defs>
-                    <path d="M20 90H352M20 50H352" stroke="#ffffff14"/>
-                    <path d="M20 92 L86 82.8 L152 73.2 L218 65.6 L284 52.4 L350 41.4 V130 H20 Z" fill="url(#b-groen)"/>
-                    <path d="M20 92 L86 82.8 L152 73.2 L218 65.6 L284 52.4 L350 41.4" fill="none" stroke="#2ECC71" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-                    <circle class="knipper" cx="350" cy="41.4" r="4.5" fill="#2ECC71"/>
-                    <text x="20" y="146" text-anchor="middle">jun</text><text x="86" y="146" text-anchor="middle">jul</text><text x="152" y="146" text-anchor="middle">aug</text><text x="218" y="146" text-anchor="middle">sep</text><text x="284" y="146" text-anchor="middle">okt</text><text x="350" y="146" text-anchor="middle" fill="#fff">nov</text>
+                    <path d="M60 103.3H362M60 56.7H362M60 10H362" stroke="#ffffff14"/>
+                    <text x="0" y="107">€5.000</text><text x="0" y="60.5">€6.000</text><text x="0" y="14">€7.000</text>
+                    <path d="M60 73.4 L210 59.9 L360 46.6 V150 H60 Z" fill="url(#b-groen)"/>
+                    <path d="M60 73.4 L210 59.9 L360 46.6" fill="none" stroke="#2ECC71" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                    <circle class="knipper" cx="360" cy="46.6" r="4.5" fill="#2ECC71"/>
+                    <text x="60" y="170" text-anchor="middle">sep</text><text x="210" y="170" text-anchor="middle">okt</text><text x="356" y="170" text-anchor="middle" fill="#fff">nov</text>
                   </svg>
+                  <div class="b-legenda">
+                    <span class="aan"><i style="background: #2ECC71"></i>Saldo</span>
+                    <span><i style="background: #5B92FF"></i>Spaarbedrag</span>
+                  </div>
                   <div class="b-delen">
-                    <div class="b-deel"><i style="border-color: #2ECC71; background: #2ECC71"></i><span class="naam">Spaargeld</span><b>€6.215,00</b></div>
-                    <div class="b-deel"><i style="border-color: #9D7BF0"></i><span class="naam">Vakantie</span><b>€1.450,00</b></div>
-                    <div class="b-deel"><i style="border-color: #5B92FF"></i><span class="naam">Kleding</span><b>€310,00</b></div>
+                    <div class="b-deel eerste"><i class="gekozen"></i><span class="naam">Spaarrekening</span><svg class="wie" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><b>€6.215,00</b></div>
+                    <div class="b-deel"><i></i><span class="naam">Vakantie</span><svg class="wie" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><b>€1.450,00</b></div>
+                    <div class="b-deel"><i></i><span class="naam">Kleding</span><svg class="wie" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#919191" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><b>€310,00</b></div>
                     <div class="b-deel ander"><i class="leeg"></i><span class="naam">Gereserveerd door Tom</span><b>€965,00</b></div>
                     <div class="b-deel totaal"><i class="leeg"></i><span class="naam">Totaal</span><b>€8.940,00</b></div>
                   </div>
-                  <span class="b-knop">Geld verplaatsen</span>
+                  <span class="b-knop">Geld overboeken</span>
                 </div>
 
-                <!-- Budgetten (BudgetsScreen): wat je per maand wilt uitgeven, per groep. -->
+                <!-- Budgetten (BudgetsScreen, 24-11-2026 gelijkgetrokken met de app): de uitleg,
+                     de maand, het referentiebedrag en per groep een veld voor Sophie en Tom. -->
                 <div class="app blad">
                   <div class="b-kop">
                     <h2>Budgetten</h2>
-                    <span class="b-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5M12 7.6v.1"/></svg></span>
+                    <span class="b-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5M12 7.6v.6"/></svg></span>
                   </div>
-                  <div class="b-sectie">Netto inkomsten</div>
-                  <div class="b-kaart">
-                    <div class="b-post"><span>Per maand</span><b>€2.950</b></div>
+                  <p class="b-zin b-intro">Stel per potje een doel dat je haalbaar vindt: hoe meer je begroot, hoe minder er overblijft om te sparen. De ingestelde budgetten zijn terug te vinden in het tabblad Inzichten. Door budgetten in te stellen zie je hoeveel je nog over hebt binnen een maand.</p>
+                  <div class="b-maanden">
+                    <span class="aan"><b>November</b><small>huidige maand</small></span>
+                    <span><b>December</b><small>volgende maand</small></span>
                   </div>
-                  <div class="b-sectie"><i style="background: #5B92FF"></i>Vaste kosten</div>
+                  <div class="b-sectie b-referentie">Referentiebedrag <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5M12 7.6v.6"/></svg></div>
+                  <div class="b-schakel"><span class="aan">Gemiddeld</span><span>Vorige maand</span><span>Huidige maand</span></div>
+                  <div class="b-wie"><span>Sophie</span><span>Tom</span></div>
+                  <div class="b-sectie">Netto inkomsten <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5M12 7.6v.6"/></svg></div>
                   <div class="b-kaart">
-                    <div class="b-post"><span>Wonen</span><b>€1.050</b></div>
-                    <div class="b-post"><span>Vaste lasten</span><b>€340</b></div>
+                    <div class="b-velden">
+                      <span class="b-veld"><b>€</b><span class="vul"></span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#919191" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><b>2.950</b></span>
+                      <span class="b-veld"><b>€</b><span class="vul"></span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#919191" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><b>2.600</b></span>
+                    </div>
                   </div>
-                  <div class="b-sectie"><i style="background: #F5B841"></i>Boodschappen</div>
+                  <div class="b-sectie b-ruimer">Vrij besteedbaar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5M12 7.6v.6"/></svg></div>
                   <div class="b-kaart">
-                    <div class="b-post"><span>Boodschappen</span><b>€420</b></div>
-                  </div>
-                  <div class="b-sectie"><i style="background: #FF6369"></i>Vrij besteedbaar</div>
-                  <div class="b-kaart">
-                    <div class="b-post"><span>Vervoer</span><b>€170</b></div>
-                    <div class="b-post"><span>Vrije tijd &amp; sociaal</span><b>€230</b></div>
-                    <div class="b-post"><span>Kleding &amp; verzorging</span><b>€150</b></div>
-                    <div class="b-post"><span>Overig</span><b>€100</b></div>
+                    <small class="b-gemiddeld">€1.215,00 / maand gemiddeld</small>
+                    <div class="b-velden">
+                      <span class="b-veld"><b>€</b><span class="vul"></span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#919191" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><b>650</b></span>
+                      <span class="b-veld"><b>€</b><span class="vul"></span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#919191" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><b>600</b></span>
+                    </div>
                   </div>
                 </div>
                 </div>
@@ -790,7 +796,7 @@
         if (!location.hash) document.documentElement.scrollIntoView({ block: 'start', behavior: 'instant' });
       });
     </script>
-    <script src="veeg.js?v=20261124a"></script>
+    <script src="veeg.js?v=20261124b"></script>
     <script src="menu.js?v=20261031o"></script>
     <script src="cookies.js"></script>
     <!-- Bezoekers tellen zonder cookies en zonder IP-adressen (GoatCounter, 28-10-2026). -->

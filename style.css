@@ -723,42 +723,59 @@ h1 {
   place-items: center;
 }
 
+/* De weken van de maand als ringen met het weeknummer, zoals WeekDots in de app: groen wat voorbij
+   is en de week van nu, grijs wat nog komt, een halve ring voor een week die maar half in de maand
+   valt. Alleen de ring van nu knippert. */
 .b-weken {
   display: flex;
-  gap: 5px;
+  gap: 4px;
 }
 
 .b-weken i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #2c2c2c;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  font-style: normal;
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
 }
 
-.b-weken i.was {
-  background: #fff;
+.b-weken svg {
+  position: absolute;
+  inset: 0;
+  width: 24px;
+  height: 24px;
+  overflow: visible;
+  fill: none;
+  stroke-linecap: round;
 }
 
-.b-weken i.nu,
+.b-weken i.nu svg,
 .b-lees i,
 .b-grafiek .knipper {
   animation: knipper 1.6s ease-in-out infinite alternate;
 }
 
-.b-weken i.nu {
-  background: #5b92ff;
-}
-
 .b-sub {
   display: flex;
   justify-content: space-between;
-  margin-top: 2px;
+  align-items: baseline;
+  margin-top: 4px;
   padding: 0 4px;
-  font-size: 14px;
+  font-size: 15.5px;
+  line-height: 22px;
 }
 
 .b-sub span + span {
   color: #919191;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.b-zin .b-plus {
+  color: #2ecc71;
 }
 
 .b-zin {
@@ -782,6 +799,23 @@ h1 {
   width: 7px;
   height: 7px;
   border-radius: 50%;
+}
+
+.b-lees-maand {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+  min-height: 42px;
+}
+
+.b-lees-maand span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
 }
 
 .b-grafiek {
@@ -822,12 +856,6 @@ h1 {
   font-weight: 600;
 }
 
-.b-rij .naam small {
-  display: block;
-  color: #919191;
-  font-size: 11.5px;
-  font-weight: 400;
-}
 
 .b-meter {
   display: flex;
@@ -860,8 +888,87 @@ h1 {
   margin-top: 28px;
 }
 
-.appkaart.b-lijst .b-rij {
-  padding: 11px 14px;
+.b-pijlers {
+  margin-top: 4px;
+}
+
+.b-pijler {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 4px;
+}
+
+.b-pijler + .b-pijler {
+  border-top: 0.5px solid #353535;
+}
+
+.b-pijler i {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  box-sizing: border-box;
+  border: 1.6px solid #919191;
+  border-radius: 50%;
+}
+
+.b-pijler .naam {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.b-cijfer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  width: 74px;
+}
+
+.b-cijfer.smal {
+  width: 52px;
+}
+
+.b-cijfer b {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.b-cijfer span {
+  align-self: stretch;
+  height: 4px;
+  border-radius: 2px;
+  background: #2c2c2c;
+  overflow: hidden;
+}
+
+.b-cijfer em {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.blokkop.b-verbeter {
+  margin-top: 28px;
+}
+
+.appkaart.b-advies {
+  padding: 4px 16px;
+}
+
+.b-advies-rij {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 0;
+}
+
+.b-advies-rij .naam {
+  flex: 1;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
 }
 
 .b-ring {
@@ -884,16 +991,51 @@ h1 {
   letter-spacing: -0.4px;
 }
 
+.b-legenda {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 0 4px;
+}
+
+.b-legenda span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #919191;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.b-legenda span.aan {
+  background: #2ecc711f;
+  color: #2ecc71;
+}
+
+.b-legenda i {
+  width: 10px;
+  height: 3px;
+  border-radius: 2px;
+}
+
 .b-delen {
-  margin-top: 14px;
+  margin-top: 18px;
+  padding: 0 4px;
 }
 
 .b-deel {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 11px 4px;
+  padding: 11px 0;
   font-size: 14px;
+}
+
+.b-deel .wie {
+  flex-shrink: 0;
+  margin-right: -5px;
 }
 
 .b-deel + .b-deel {
@@ -904,8 +1046,18 @@ h1 {
   flex-shrink: 0;
   width: 13px;
   height: 13px;
+  box-sizing: border-box;
   border-radius: 50%;
-  border: 2px solid transparent;
+  border: 1.6px solid #919191;
+}
+
+.b-deel i.gekozen {
+  border-color: #2ecc71;
+  background: #2ecc71;
+}
+
+.b-deel i.leeg {
+  border-color: transparent;
 }
 
 .b-deel .naam {
@@ -914,7 +1066,7 @@ h1 {
 }
 
 .b-deel b {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -931,31 +1083,123 @@ h1 {
 .b-knop {
   display: block;
   width: max-content;
-  margin: 18px auto 0;
-  padding: 8px 16px;
-  border: 1px solid #5b92ff;
+  margin: 10px auto 0;
+  padding: 5px 10px;
+  border: 0.5px solid #5b92ff;
   border-radius: 999px;
+  background: #5b92ff1f;
   color: #5b92ff;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
+}
+
+.b-zin.b-intro {
+  margin: 8px 4px 0;
+}
+
+.b-maanden {
+  display: flex;
+  gap: 4px;
+  margin: 14px 4px 0;
+  padding: 4px;
+  border-radius: 14px;
+  background: #262626;
+}
+
+.b-maanden span {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 11px;
+  color: #919191;
+  text-align: center;
+}
+
+.b-maanden span.aan {
+  background: #1c1c1c;
+  color: #fff;
+}
+
+.b-maanden b {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.b-maanden small {
+  display: block;
+  margin-top: 1px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.b-maanden span.aan small {
+  color: #f5b841;
 }
 
 .b-sectie {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 20px 4px 10px;
+  gap: 4px;
+  margin: 6px 4px 10px;
   font-size: 17px;
   font-weight: 700;
   letter-spacing: -0.2px;
 }
 
-.b-sectie i {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
+.b-sectie svg {
+  transform: translateY(-6px);
+}
+
+.b-sectie.b-referentie {
+  margin-top: 28px;
+}
+
+.b-sectie.b-ruimer {
+  margin-top: 32px;
+}
+
+.b-schakel {
+  display: flex;
+  height: 42px;
+  margin: 0 4px;
+  padding: 3px;
+  border-radius: 14px;
+  background: #262626;
+}
+
+.b-schakel span {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  color: #919191;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.b-schakel span.aan {
+  background: #1c1c1c;
+  color: #fff;
+}
+
+.b-wie {
+  display: flex;
+  gap: 12px;
+  margin-top: 34px;
+  padding: 0 4px 8px;
+}
+
+.b-wie span {
+  flex: 1;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
 }
 
 .b-kaart {
@@ -965,24 +1209,48 @@ h1 {
   background: #1c1c1c;
 }
 
-.b-post {
+.b-gemiddeld {
+  display: block;
+  padding-top: 13px;
+  color: #919191;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.b-velden {
   display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  font-size: 14px;
+  gap: 12px;
+  padding: 11px 0;
 }
 
-.b-post + .b-post {
-  border-top: 0.5px solid #353535;
+.b-gemiddeld + .b-velden {
+  padding-top: 8px;
 }
 
-.b-post b {
-  font-size: 13.5px;
+.b-veld {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 32px;
+  padding: 0 9px;
+  box-sizing: border-box;
+  border: 0.5px solid #353535;
+  border-radius: 10px;
+  background: #262626;
+}
+
+.b-veld b {
+  font-size: 13px;
   font-weight: 700;
 }
 
+.b-veld .vul {
+  flex: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .b-weken i.nu,
+  .b-weken i.nu svg,
   .b-lees i,
   .b-grafiek .knipper {
     animation: none;
