@@ -930,6 +930,12 @@ h1 {
   fill: #fff;
 }
 
+/* De bedragen op de as, zoals axisLabel in de app: kleiner en halfvet (24-11-2026). */
+.b-grafiek text.as {
+  font-size: 10px;
+  font-weight: 600;
+}
+
 .b-rijen {
   margin-top: 14px;
 }
