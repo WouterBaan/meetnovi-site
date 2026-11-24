@@ -399,8 +399,10 @@ h1 {
   margin-left: 6px;
 }
 
+/* De titel begint 90 punten van de bovenkant, zoals in de app: de veilige zone van een
+   iPhone (62) plus PAGINA_BOVEN (28). Met de statusbalk van 54 is dat 36 erbij (24-11-2026). */
 .app {
-  padding: 18px 16px 0;
+  padding: 36px 16px 0;
 }
 
 .groet {
