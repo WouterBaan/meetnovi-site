@@ -399,10 +399,10 @@ h1 {
   margin-left: 6px;
 }
 
-/* De titel begint 90 punten van de bovenkant, zoals in de app: de veilige zone van een
-   iPhone (62) plus PAGINA_BOVEN (28). Met de statusbalk van 54 is dat 36 erbij (24-11-2026). */
+/* De titel begint 78 punten van de bovenkant, gemeten op Wouters iPhone (24-11-2026). Met de
+   statusbalk van 54 is dat 24 erbij. */
 .app {
-  padding: 36px 16px 0;
+  padding: 24px 16px 0;
 }
 
 .groet {
@@ -414,6 +414,7 @@ h1 {
 
 .groet h2 {
   font-size: 30px;
+  line-height: 36px;
   font-weight: 700;
   letter-spacing: -0.6px;
   margin: 0;
@@ -438,7 +439,7 @@ h1 {
 }
 
 .groet-sub {
-  margin: 6px 4px 22px;
+  margin: 6px 4px 38px;
   font-size: 15.5px;
   line-height: 22px;
 }
@@ -446,7 +447,7 @@ h1 {
 .ringen {
   display: flex;
   gap: 12px;
-  margin-bottom: 22px;
+  margin-bottom: 38px;
 }
 
 .ringvak {
@@ -543,7 +544,7 @@ h1 {
 }
 
 .appkaart.rekeningen .rekening {
-  padding: 11px 0;
+  padding: 10px 0;
 }
 
 .appkaart.rekeningen .totaal {
@@ -792,12 +793,13 @@ h1 {
   display: flex;
   align-items: center;
   gap: 8px;
-  min-height: 40px;
+  min-height: 38px;
   padding: 0 4px;
 }
 
 .b-kop h2 {
   margin: 0;
+  line-height: 36px;
   font-size: 30px;
   font-weight: 700;
   letter-spacing: -0.6px;
@@ -871,6 +873,7 @@ h1 {
    verspringt de grafiek niet bij een kortere zin (24-11-2026). */
 .b-zin.b-status {
   min-height: 66px;
+  margin-bottom: 10px;
 }
 
 .b-zin {
@@ -937,7 +940,7 @@ h1 {
 }
 
 .b-rijen {
-  margin-top: 14px;
+  margin-top: 26px;
 }
 
 .b-rij {
@@ -1095,7 +1098,7 @@ h1 {
 .b-legenda {
   display: flex;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 22px;
   padding: 0 4px;
 }
 
@@ -1122,7 +1125,7 @@ h1 {
 }
 
 .b-delen {
-  margin-top: 18px;
+  margin-top: 22px;
   padding: 0 4px;
 }
 
@@ -1161,16 +1164,19 @@ h1 {
   letter-spacing: -0.2px;
 }
 
-.b-rail .lijn {
+/* Eigen naam: `.lijn` is op de site al de lijn met pijl bij Zo werkt Novi, en die kwam hier
+   bovenaan de rail terecht (24-11-2026). */
+.b-rail .b-raillijn {
   flex: 1;
   width: 2px;
-  min-height: 30px;
+  min-height: 26px;
   border-radius: 1px;
   background: #353535;
 }
 
 .b-rail svg {
-  margin-top: -10px;
+  flex-shrink: 0;
+  margin-top: -8px;
 }
 
 .b-moves {
@@ -1241,6 +1247,25 @@ h1 {
 
 .b-grafiekkop .b-lees {
   padding: 0;
+}
+
+/* De afstand tot de grafiek, gemeten op Wouters iPhone: op Inzichten heeft de kop geen
+   vaste hoogte en staat de grafiek er vlak onder, op Score 10 eronder en op Sparen 18
+   (24-11-2026). */
+.b-grafiekkop.smal {
+  min-height: 0;
+}
+
+.b-grafiekkop + .b-grafiek {
+  margin-top: 10px;
+}
+
+.b-grafiekkop.smal + .b-grafiek {
+  margin-top: 4px;
+}
+
+.b-grafiekkop.ruim + .b-grafiek {
+  margin-top: 18px;
 }
 
 .b-periode {
