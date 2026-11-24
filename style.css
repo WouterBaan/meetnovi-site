@@ -642,7 +642,7 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 144px;
+  height: 151px;
   pointer-events: none;
   background: linear-gradient(
     to bottom,
@@ -653,16 +653,17 @@ h1 {
   );
 }
 
-/* Zoals TabBar in de app (24-11-2026): 62 hoog, 36 van de zijkant (TAB_BAR_MARGE) en 28
-   van de onderkant (de thuisbalk min 6). Hij zweeft over de inhoud, dus wat onderaan staat,
+/* Zoals TabBar in de app (24-11-2026): 36 van de zijkant (TAB_BAR_MARGE). Hoogte en afstand
+   tot de onderkant gemeten op een schermafbeelding van Wouters iPhone: 64 hoog, 33 van de
+   onderkant (de code zegt 62 en 28). Hij zweeft over de inhoud, dus wat onderaan staat,
    valt er net als in de app half of helemaal achter. */
 .tabbalk {
   position: absolute;
   z-index: 3;
   left: 36px;
   right: 36px;
-  bottom: 28px;
-  height: 62px;
+  bottom: 33px;
+  height: 64px;
   border-radius: 24px;
   background: #2e2e2e;
   border: 0.5px solid #4a4a4a;
@@ -1122,6 +1123,11 @@ h1 {
 /* Geen lijn tussen Gereserveerd door en het totaal, zoals in de app (24-11-2026). */
 .b-deel.ander + .b-deel.totaal {
   border-top: 0;
+  padding-top: 3px;
+}
+
+.b-deel.ander {
+  padding-bottom: 3px;
 }
 
 /* De mutaties van de maand, ingeklapt zoals op Sparen in de app: links de stand aan het
@@ -1475,6 +1481,27 @@ h1 {
 
 .b-veld .vul {
   flex: 1;
+}
+
+/* De maand staat vast: boven de tabbalk de knop om hem weer aan te passen, zoals in de app.
+   46 hoog, 8 boven de tabbalk, in de kleur van de tabbalk (24-11-2026). */
+.b-aanpassen {
+  position: absolute;
+  left: 36px;
+  right: 36px;
+  bottom: 105px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 24px;
+  background: #2e2e2e;
+  border: 0.5px solid #4a4a4a;
+  box-shadow: 0 8px 18px #00000073;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
