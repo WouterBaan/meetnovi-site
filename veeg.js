@@ -55,11 +55,25 @@
       tabs.forEach(function (tab, j) {
         tab.classList.toggle('aan', j === i);
       });
+      stippen.forEach(function (stip, j) {
+        stip.classList.toggle('aan', j === i);
+      });
     }
     bladen.addEventListener('scroll', function () { requestAnimationFrame(zet); }, { passive: true });
     tabs.forEach(function (tab, i) {
       tab.addEventListener('click', function () { naar(i); });
     });
+    // De bolletjes onder de telefoon (24-11-2026): één per tabblad, en een klik gaat erheen.
+    var stippen = [];
+    var plek = document.querySelector('.veegwijzer .schermstippen');
+    if (plek) {
+      for (var k = 0; k < aantal; k++) {
+        var stip = document.createElement('span');
+        stip.addEventListener('click', naar.bind(null, k));
+        plek.appendChild(stip);
+        stippen.push(stip);
+      }
+    }
 
     var sleep = null;
     bladen.addEventListener('pointerdown', function (e) {
