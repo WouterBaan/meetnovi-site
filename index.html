@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" href="icon.png?v=20261121" />
     <!-- Vóór de opmaak, zodat de kopbalk op de telefoon meteen goed staat (31-10-2026). -->
     <script>document.documentElement.classList.add('js');</script>
-    <link rel="stylesheet" href="style.css?v=20261124f" />
+    <link rel="stylesheet" href="style.css?v=20261124g" />
   </head>
   <body>
     <header class="kop">
@@ -162,14 +162,17 @@
                   </div>
                   <div class="b-sub"><span>24 okt – 23 nov</span><span>Nog 12 dagen</span></div>
                   <p class="b-zin b-status">Je ligt op schema. Je hebt nog €412 vrij te besteden, €34 per dag tot je salaris.</p>
-                  <div class="b-lees"><i style="background: #5B92FF"></i>€1.826</div>
+                  <div class="b-lees"><i style="background: #2ECC71"></i>€1.826</div>
                   <svg class="b-grafiek" viewBox="0 0 370 176">
                     <path d="M60 103.3H362M60 56.7H362M60 10H362" stroke="#353535" stroke-dasharray="3 4"/>
                     <text x="0" y="107">€1.000</text><text x="0" y="60.5">€2.000</text><text x="0" y="14">€3.000</text>
                     <path d="M60 48.3 L210 42.2 L360 64.8 V150 H60 Z" fill="#5B92FF14"/>
                     <path d="M60 35.2H362" stroke="#919191" stroke-opacity=".55"/>
-                    <path d="M60 48.3 L210 42.2 L360 64.8" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
-                    <circle class="knipper" cx="360" cy="64.8" r="4.5" fill="#5B92FF"/>
+                    <defs><linearGradient id="b-been" gradientUnits="userSpaceOnUse" x1="210" y1="42.2" x2="356" y2="64.2"><stop offset=".2" stop-color="#fff"/><stop offset=".8" stop-color="#2ECC71"/></linearGradient></defs>
+                    <path d="M60 48.3 L210 42.2" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                    <path d="M210 42.2 L356 64.2" fill="none" stroke="url(#b-been)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4"/>
+                    <circle cx="60" cy="48.3" r="2.5" fill="#0a0e14" stroke="#2ECC71" stroke-width="1.5" opacity=".7"/><circle cx="210" cy="42.2" r="2.5" fill="#0a0e14" stroke="#2ECC71" stroke-width="1.5" opacity=".7"/>
+                    <circle class="knipper" cx="360" cy="64.8" r="3" fill="#2ECC71"/>
                     <text x="60" y="170" text-anchor="middle">sep</text><text x="210" y="170" text-anchor="middle">okt</text><text x="356" y="170" text-anchor="middle" fill="#fff">nov</text>
                   </svg>
                   <div class="b-rijen">
@@ -219,8 +222,10 @@
                       <linearGradient id="b-score" gradientUnits="userSpaceOnUse" x1="20" y1="0" x2="350" y2="0"><stop offset="0" stop-color="#FF6369"/><stop offset=".22" stop-color="#FF6369"/><stop offset=".36" stop-color="#F5B841"/><stop offset="1" stop-color="#F5B841"/></linearGradient>
                     </defs>
                     <path d="M20 82H352M20 58H352M20 34H352" stroke="#353535" stroke-dasharray="3 4"/>
-                    <path d="M20 92.8 L86 84.4 L152 79.6 L218 64 L284 54.4 L350 41.2" fill="none" stroke="url(#b-score)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-                    <circle class="knipper" cx="350" cy="41.2" r="4.5" fill="#F5B841"/>
+                    <path d="M20 92.8 L86 84.4 L152 79.6 L218 64 L284 54.4" fill="none" stroke="url(#b-score)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+                    <path d="M284 54.4 L346.1 42" fill="none" stroke="#F5B841" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4"/>
+                    <circle cx="20" cy="92.8" r="2.5" fill="#0a0e14" stroke="#FF6369" stroke-width="1.5" opacity=".7"/><circle cx="86" cy="84.4" r="2.5" fill="#0a0e14" stroke="#FF6369" stroke-width="1.5" opacity=".7"/><circle cx="152" cy="79.6" r="2.5" fill="#0a0e14" stroke="#F5B841" stroke-width="1.5" opacity=".7"/><circle cx="218" cy="64" r="2.5" fill="#0a0e14" stroke="#F5B841" stroke-width="1.5" opacity=".7"/><circle cx="284" cy="54.4" r="2.5" fill="#0a0e14" stroke="#F5B841" stroke-width="1.5" opacity=".7"/>
+                    <circle class="knipper" cx="350" cy="41.2" r="3" fill="#F5B841"/>
                     <text x="20" y="146" text-anchor="middle">jun</text><text x="86" y="146" text-anchor="middle">jul</text><text x="152" y="146" text-anchor="middle">aug</text><text x="218" y="146" text-anchor="middle">sep</text><text x="284" y="146" text-anchor="middle">okt</text><text x="350" y="146" text-anchor="middle" fill="#fff">nov</text>
                   </svg>
                   <div class="b-pijlers">
@@ -253,8 +258,10 @@
                     <path d="M60 103.3H362M60 56.7H362M60 10H362" stroke="#353535" stroke-dasharray="3 4"/>
                     <text x="0" y="107">€5.000</text><text x="0" y="60.5">€6.000</text><text x="0" y="14">€7.000</text>
                     <path d="M60 73.4 L210 59.9 L360 46.6 V150 H60 Z" fill="#2ECC7114"/>
-                    <path d="M60 73.4 L210 59.9 L360 46.6" fill="none" stroke="#2ECC71" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-                    <circle class="knipper" cx="360" cy="46.6" r="4.5" fill="#2ECC71"/>
+                    <path d="M60 73.4 L210 59.9" fill="none" stroke="#2ECC71" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                    <path d="M210 59.9 L356 47" fill="none" stroke="#2ECC71" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4"/>
+                    <circle cx="60" cy="73.4" r="2.5" fill="#0a0e14" stroke="#2ECC71" stroke-width="1.5" opacity=".7"/><circle cx="210" cy="59.9" r="2.5" fill="#0a0e14" stroke="#2ECC71" stroke-width="1.5" opacity=".7"/>
+                    <circle class="knipper" cx="360" cy="46.6" r="3" fill="#2ECC71"/>
                     <text x="60" y="170" text-anchor="middle">sep</text><text x="210" y="170" text-anchor="middle">okt</text><text x="356" y="170" text-anchor="middle" fill="#fff">nov</text>
                   </svg>
                   <div class="b-legenda">
@@ -796,7 +803,7 @@
         if (!location.hash) document.documentElement.scrollIntoView({ block: 'start', behavior: 'instant' });
       });
     </script>
-    <script src="veeg.js?v=20261124f"></script>
+    <script src="veeg.js?v=20261124g"></script>
     <script src="menu.js?v=20261031o"></script>
     <script src="cookies.js"></script>
     <!-- Bezoekers tellen zonder cookies en zonder IP-adressen (GoatCounter, 28-10-2026). -->
